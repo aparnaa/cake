@@ -1,0 +1,15 @@
+<br><br>
+<div id=menu>
+<ul>
+ <li><%= link_to 'Inbox',inbox_path %></li>
+ <li><%= link_to 'Outbox',outbox_path %></li>
+</ul>
+ </div>
+<br>
+<table class="curvedEdges" border='1'>
+    <tr>
+        <td width="170"><%= time_ago_in_words(@msg.created_at) %> ago</td>
+        <td width="325"><%= @msg.invite %></td>
+    </tr>
+</table>
+<br>

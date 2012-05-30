@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mobile_number: 1
+  title: MyString
+  date: 2012-05-18
+  time: 2012-05-18 19:02:39
+  venue: MyString
+  description: MyText
+  cause: MyString
+  organisation_name: MyString
+  share_amount: 1.5
+  message_id: 1
+  member_id: 1
+
+two:
+  mobile_number: 1
+  title: MyString
+  date: 2012-05-18
+  time: 2012-05-18 19:02:39
+  venue: MyString
+  description: MyText
+  cause: MyString
+  organisation_name: MyString
+  share_amount: 1.5
+  message_id: 1
+  member_id: 1

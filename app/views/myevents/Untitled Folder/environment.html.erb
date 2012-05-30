@@ -1,0 +1,20 @@
+<h1>New myevent</h1>
+
+<%=form_for :@myevent, :url=>{:action=>'template', :controller=>'myevents'} do |f|%>
+
+
+   <%= @org.each do |ca| %>
+   <%= f.radio_button :organisation_name, ca %>
+   <% end %>
+   
+
+  <div class="field">
+    <%= f.label :"Share Amount" %>  <br />
+    <%= f.text_field :share_amount %> %
+</div>
+   <%=f.submit 'Continue'%> 
+  
+
+<% end %>
+
+

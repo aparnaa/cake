@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  member_id: 1
+  myevent_id: 1
+  transaction_id: 1
+  org_amt: 1
+  member_amt: 1
+
+two:
+  member_id: 1
+  myevent_id: 1
+  transaction_id: 1
+  org_amt: 1
+  member_amt: 1

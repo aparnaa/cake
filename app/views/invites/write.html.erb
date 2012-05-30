@@ -1,0 +1,27 @@
+<h3>Your contact details</h3>
+<h4>Your full name: <%= current_member.first_name %></h4>
+<h4>Your email_id: <%= current_member.email %></h4>
+<table cellspacing=10>
+       <%=form_for :message, :url=>{:action=>"sendmessage", :controller=>"invites"} do |f|%>
+               <tr>
+                       <td><%=f.hidden_field :sender, :value=>@sender %></td>
+                       <td><%=f.hidden_field :receiver, :value=>@receiver.id %></td>
+	       </tr>
+               <tr>
+		       <td><%=f.label :Email,"Email"%></td><br>                       
+                       <td><%=@receiver.email %></td><br>
+		</tr>
+               <tr>
+		       <td><%=f.label :subject,"Subject"%></td>                        
+                       <td><%=f.text_field :subject %></td>
+		</tr>
+               <tr>
+                       <td><%=f.label :message,"Message"%></td>                        
+                       <td><%=f.text_area :message, :size => '50x10'%></td>
+               </tr>
+               <tr>
+                       <td></td><td></td><td></td> 
+                       <td colspan=3><%=f.submit 'Send Message'%></td>
+               </tr>
+       <%end%>
+ </table>

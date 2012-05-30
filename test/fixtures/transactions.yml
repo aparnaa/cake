@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  amount: 1
+  first_name: MyString
+  last_name: MyString
+  card_type: MyString
+  card_number: 1
+  card_verification: 1
+  card_date: 2012-05-30
+
+two:
+  amount: 1
+  first_name: MyString
+  last_name: MyString
+  card_type: MyString
+  card_number: 1
+  card_verification: 1
+  card_date: 2012-05-30

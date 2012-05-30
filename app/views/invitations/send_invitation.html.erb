@@ -1,0 +1,34 @@
+<%= form_for(@invitation), :url=>{:action=>'send_invite', :controller=>'invitations'}  do |f| %>
+  <% if @invitation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@a.errors.count, "error") %> prohibited this invitation from being saved:</h2>
+
+      <ul>
+      <% @invitation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+ <%#= session[:value][:message] %>
+
+  <div class="field">
+    <%= f.label :myevent_id %><br />
+    <%= f.text_field :myevent_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%#= f.text_field :email %>
+   
+
+ 
+<%= f.select :email, options_for_select(Contact.all.collect {|p| [p.email]}, {:prompt => 'select email'}) %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
