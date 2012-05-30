@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530080613) do
+ActiveRecord::Schema.define(:version => 20120530082136) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -47,16 +47,11 @@ ActiveRecord::Schema.define(:version => 20120530080613) do
   end
 
   create_table "invoices", :force => true do |t|
-    t.string   "invoice_id"
-    t.string   "hostname"
-    t.string   "eventname"
-    t.string   "organisation_name"
-    t.integer  "amount_collected"
-    t.integer  "percentage_amt_to_org"
-    t.integer  "amt_to_org"
-    t.string   "amt_to_member"
-    t.string   "payment_status"
-    t.integer  "service_fees"
+    t.integer  "member_id"
+    t.integer  "myevent_id"
+    t.integer  "transaction_id"
+    t.integer  "org_amt"
+    t.integer  "member_amt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
