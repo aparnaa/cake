@@ -8,8 +8,9 @@ class Member < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname, :lastname, :role, 
                 :mobile, :address_line1, :address_line2, :city, :state, :country 
-has_many :contact
-has_many :transaction
+has_many :contacts
+has_many :transactions
+has_many :myevents
  #validates :mobile, :length => 10 , :format => { :with => /\A\S[0-9\+\/\(\)\s\-]*\z/i }, :presence => true
 
  

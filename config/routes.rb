@@ -60,7 +60,7 @@ match 'invitations/send_invite' => 'invitations#send_invite'
 match 'invitations/event_detail' => 'invitations#event_detail'
 match 'home/aboutus' => 'home#aboutus'
 match 'transactions/new' => 'transactions#new'
-
+match 'transactions/create' => 'transactions#create'
 match '/inbox'=> 'invites#inbox'
    match '/outbox'=> 'invites#outbox'
    match '/write/:id'=> 'invites#write'

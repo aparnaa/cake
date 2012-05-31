@@ -1,4 +1,12 @@
-<h2>thank u</h2> 
+<h4>Thank You </h4>
 
-<h3>mail sent successfully</h3>
+<h3> Message Sent </h3>
+
+
+
+<td><%=@myevent.title%></td>
+
+
+
+<td><%=@myevent.organisation_name%></td>
 

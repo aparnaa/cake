@@ -1,7 +1,7 @@
 class Myevent < ActiveRecord::Base
 has_many :invitation
 has_one :organisation
-
+belongs_to :member
 
 #validates_presence_of :mobile_number,  length => 10   
 validates_presence_of :title  

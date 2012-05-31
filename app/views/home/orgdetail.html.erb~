@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<div >
+<div>
 <table border = "1" cellspacing="50" >
 
 

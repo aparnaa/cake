@@ -46,15 +46,19 @@ def event
 end
 
 def cause
+	#@day=params[:@myevents][:date(1i)] 
+	#@month=params[:@myevents][:date(2i)] 
+	#@year=params[:@myevents][:date(3i)]
+	#@date=Date.civil(@day.to_i,@month.to_i,@year.to_i)
 	puts "*******************************************************"
-    puts session[:value]={:mobile_number=>params[:@myevent][:mobile_number], :title=>params[:@myevent][:title], :date=>params[:@myevent][:date], :time=>params[:@myevent][:time], :venue=>params[:@myevent][:venue], :description=>params[:@myevent][:description]}
+    puts session[:value]={:mobile_number=>params[:@myevent][:mobile_number], :title=>params[:@myevent][:title], :date=>params[:@myevent][:@date], :time=>params[:@myevent][:time], :venue=>params[:@myevent][:venue], :description=>params[:@myevent][:description]}
 	puts "*******************************************************"
 
 
 	puts "*******************************************************"
 
 #puts time=params{[:@myevents][:date(1i)] + "-" + "" + params[:@myevents][:date(2i)] + "-" + "" + params[:@myevents][:date(3i)]}
-
+#Date.civil
 	puts "*******************************************************"
 
 end

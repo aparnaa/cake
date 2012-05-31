@@ -102,20 +102,29 @@ class InvitationsController < ApplicationController
   end
 
   def send_invite
-	@q=Invitation.new
+
+	@eventid=params[:@a][:myevent_id]
+        @myevent=Myevent.find_by_id(@eventid)
+
+      	@q=Invitation.new
 	@q.sender=current_member.id
 	@q.email=params[:@a][:email]
 	@q.message=params[:message]
-	@q.myevent_id=params[:@a][:event_id]
+	@q.myevent_id=@eventid
        	@q.save
-     puts "___________________"
- puts params[:@a]
-     puts "___________________"
+    
+        @mail=params[:@a][:email]
+        Notifier.send_mail(@mail,@myevent).deliver
 
-        mail=params[:@a][:email]
-        Notifier.send_mail(mail).deliver
 
-@myevent = Myevent.all
+p '----------------'
+puts @myevent.inspect
+p '----------------'
+
+
+
+
+#@myevent = Myevent.all
   end
 
 
