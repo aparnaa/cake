@@ -10,49 +10,52 @@ class TransactionsController < ApplicationController
   end
 
   def create
-	$value
-   p params[:id]
-   $value= params[:id]
+   $value
+    p params[:id]
+    $value= params[:id]
    @transaction = Transaction.new(params[:transaction])
+		
    ActiveMerchant::Billing::Base.mode = :test
-   gateway = ActiveMerchant::Billing::PaypalGateway.new(
-        :login => "aparna_1338179326_biz_api1.gmail.com",
-        :password => "1338179360",
-        :signature => "AGwOQKmxTNbRuAHxi.KQtb06DV4DAWQBD09GZWcGTTRfNKQIzr13Tg2H")
+
    credit_card = ActiveMerchant::Billing::CreditCard.new(
-    :type                   => "#{params[:transaction][:card_type]}",
-    :number                 => "#{params[:transaction][:card_number]}",
-    :verification_value     => "#{params[:transaction][:card_verification]}",
-    :month                   => "1",
-    :year                   => "2017",
-    :first_name             => "#{params[:transaction][:first_name]}",
-    :last_name              => "#{params[:transaction][:last_name]}"
- 
-  )
-  @amount="#{params[:transaction][:amount]}"
+ # :number     => '4785636150538332',
+:number     => "#{params[:transaction][:card_number]}",
+  :month      => '8',
+  :year       => '2019',
+  :first_name => 'Tobias',
+  :last_name  => 'Luetke',
+  :verification_value  => '123'
+)
+
+  #@amount="#{params[:transaction][:amount]}"
+
   	if credit_card.valid?
-  		response = gateway.purchase(@amount.to_i,credit_card,:ip => "127.0.0.1", :billing_address => {
-    			:name     => "Aparnaa",
-    			:address1 => "No.58 valasaravakkam",
-    			:city     => "Chennai",
-    			:state    => "Tamilnadu",
-    			:country  => "India",
-    			:zip      => "600087"
- 		 } )   
-  	   if response.success?
+  		 gateway=ActiveMerchant::Billing::PaypalGateway.new(
+    :login => "john.n_1278592458_biz_api1.yahoo.co.in",
+    :password => "1278592465",
+    :signature => "AiPC9BjkCyDFQXbSkoZcgqH3hpacAFxPwudk.Im4wr8hZApTZwekIFFz"
+  )
+    response = gateway.authorize(15000, credit_card, :ip => "127.0.0.1")
+
+  	   
+		if response.success?
+    gateway.capture(1000, response.authorization)
+
 		@transaction.save
-   		 puts "Payment complete!"
+   		# puts "Payment complete!"
+    #puts "Transaction is complete!"
+    flash[:notice] = "Thank you, Transaction is sucessfully completed"
+    redirect_to '/home/aboutus'
+     #@transaction.save
+end
   	   else
-    		puts "Error: #{response.message}"
+    		#puts "Error: #{response.message}"
+ flash[:notice] = "Sorry"
+            redirect_to '/transactions/error'
   	   end
-	else
-  	  puts "Error: credit card is not valid. #{credit_card.errors.full_messages.join('. ')}"
-        end
-	else
-          p @payment.errors
 	end
-  #redirect_to 'root_path'
   
- 
+ def error
+ end
 
 end

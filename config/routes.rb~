@@ -7,8 +7,10 @@ Newapp::Application.routes.draw do
   get "transactions/index"
 
   get "transactions/new"
+get "transactions/error"
 
-  get "transactions/create"
+
+
 
   get "invites/inbox"
 
@@ -61,10 +63,12 @@ match 'invitations/event_detail' => 'invitations#event_detail'
 match 'home/aboutus' => 'home#aboutus'
 match 'transactions/new' => 'transactions#new'
 match 'transactions/create' => 'transactions#create'
-match '/inbox'=> 'invites#inbox'
-   match '/outbox'=> 'invites#outbox'
-   match '/write/:id'=> 'invites#write'
-   match '/invites/sendmessage'=> 'invites#sendmessage'
+match 'invoices/calculation'=> 'invoices#calculation'	
+
+	match '/inbox'=> 'invites#inbox'
+   	match '/outbox'=> 'invites#outbox'
+   	match '/write/:id'=> 'invites#write'
+   	match '/invites/sendmessage'=> 'invites#sendmessage'
 #match 'organisations/user_index' => 'organisations#user_index'
 #match 'invitations/message' => 'invitations#message'
 #match 'organisations'=>'organisations#new'

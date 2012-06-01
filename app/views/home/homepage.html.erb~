@@ -1,27 +1,4 @@
-<HTML><HEAD><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta http-equiv="imagetoolbar" content="no"><link href="Resources/axurerppage.css" type="text/css" rel="stylesheet"></HEAD><BODY>
-<script type="text/javascript">
-function InitializeSubmenu(submenucontainerid, tablecellroid, tablecellid, fname) { 
-var s = "";
-s = s + "function " + fname + "() { ";
-s = s + "document.getElementById(submenucontainerid).style.visibility='';";
-s = s + "BringToFront(submenucontainerid);";
-s = s + "}";
-if ((index = navigator.userAgent.indexOf("MSIE")) >= 0)
-s = s + "document.getElementById('" + tablecellid + "').attachEvent(\"onmouseover\", " + fname + ");";
-else
-s = s + "document.getElementById('" + tablecellid + "').addEventListener(\"mouseover\", " + fname + ", true);";
-s = s + "document.getElementById(tablecellroid).onclick = function() {";
-s = s + "if( document.createEvent ) {";
-s = s + "var evObj = document.createEvent('MouseEvents');";
-s = s + "evObj.initEvent( 'click', true, false );";
-s = s + "document.getElementById(tablecellid).dispatchEvent(evObj);";
-s = s + "} else if( document.createEventObject ) {";
-s = s + "document.getElementById(tablecellid).fireEvent('onclick');";
-s = s + "}";
-s = s + "}";
-eval(s);
-}
-</script>
+
 
 <DIV id=u0 style="position:absolute; left:808px; top:842px; width:150px; height:24px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u0_rtf><span style=" font-family:'Arial'; color:#000000; font-size:21px;">4</span></DIV></DIV>

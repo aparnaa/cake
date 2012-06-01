@@ -8,7 +8,7 @@ gem 'rails', '3.0.3'
 gem 'mysql2', '<0.3'
 gem 'devise' 
 #gem 'jquery_datepicker'
-
+gem 'activemerchant'
 gem 'heroku'
 gem 'pg'
 # Use unicorn as the web server

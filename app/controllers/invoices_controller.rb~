@@ -17,4 +17,18 @@ class InvoicesController < ApplicationController
     end
   end
 
+ def calculation
+	@shamt=params[:@a][:myevent_id]
+p'---------------'
+p @shamt
+p'---------------'	
+#@percent=Myevent.find_by_share_amount(@shamt)
+
+										
+ 
+ end
+	
+
+
+
 end

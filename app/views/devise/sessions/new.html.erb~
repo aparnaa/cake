@@ -1,27 +1,4 @@
-<HTML><HEAD><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta http-equiv="imagetoolbar" content="no"><link href="Resources/axurerppage.css" type="text/css" rel="stylesheet"></HEAD><BODY>
-<script type="text/javascript">
-function InitializeSubmenu(submenucontainerid, tablecellroid, tablecellid, fname) { 
-var s = "";
-s = s + "function " + fname + "() { ";
-s = s + "document.getElementById(submenucontainerid).style.visibility='';";
-s = s + "BringToFront(submenucontainerid);";
-s = s + "}";
-if ((index = navigator.userAgent.indexOf("MSIE")) >= 0)
-s = s + "document.getElementById('" + tablecellid + "').attachEvent(\"onmouseover\", " + fname + ");";
-else
-s = s + "document.getElementById('" + tablecellid + "').addEventListener(\"mouseover\", " + fname + ", true);";
-s = s + "document.getElementById(tablecellroid).onclick = function() {";
-s = s + "if( document.createEvent ) {";
-s = s + "var evObj = document.createEvent('MouseEvents');";
-s = s + "evObj.initEvent( 'click', true, false );";
-s = s + "document.getElementById(tablecellid).dispatchEvent(evObj);";
-s = s + "} else if( document.createEventObject ) {";
-s = s + "document.getElementById(tablecellid).fireEvent('onclick');";
-s = s + "}";
-s = s + "}";
-eval(s);
-}
-</script>
+
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 <DIV id=ou0 style="position:absolute; left:0px; top:121px; width:981px; height:518px;; overflow:visible">
 
@@ -192,7 +169,7 @@ src="Login_files/u24.png" border="0" alt=""></span>
 
 <DIV id=u30container style="position:absolute; left:256px; top:442px; width:220px; height:16px; ; ; text-align: left " >
 <DIV id=u31 style="position:absolute; left:16px; top:0px; width:202px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
-<DIV id=u31_rtf><span style=" font-family:'Arial'; color:#000000; font-size:13px;"> Remember me on this computer</span></DIV></DIV>
+<DIV id=u31_rtf><span style=" font-family:'Arial'; color:#000000; font-size:13px;">&nbsp; Remember me on this computer</span></DIV></DIV>
 </DIV>
 <DIV style="position:absolute; left:256px; top:442px; width:220px; height:16px; ; ; text-align: left " ><div id=u30 style="position:absolute; left:-3px; top:-2px;" type=checkbox value=checkbox  ><%= f.check_box :remember_me %></div></DIV>
 <DIV id=u32 style="position:absolute; left:549px; top:496px; width:167px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
