@@ -1,3 +1,8 @@
+<%= render :partial => "layouts/aft_signedin" %>
+<%= render :partial => "layouts/last" %>
+
+<div  style="position:absolute; left:150px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
+
 <%= form_for :@a, :url=>{:action=>'send_invite', :controller=>'invitations'} do |f| %>
   <% if @a.errors.any? %>
     <div id="error_explanation">
@@ -23,9 +28,7 @@
     <%= f.label :lastname %><br />
     <%= f.text_field :lastname %>
   </div>
-<%p "fffffffffffffffffffffffffffffffffffffffffffffffffffffffff"%>
-<%puts @a.inspect%>
-<%p "fffffffffffffffffffffffffffffffffffffffffffffffffffffffff"%>
+
   <td><%=f.hidden_field :myevent_id, :value=> @a.id %></td>
   <div class="field">
     <%= f.label :email %><br />

@@ -1,65 +1,48 @@
 class MyeventsController < ApplicationController
   
 
-  #def index
-   # @myevent = Myevent.all
+  def index
+    @myevent = Myevent.all
 
-   # respond_to do |format|
-    #  format.html # index.html.erb
-    #  format.xml  { render :xml => @myevents }
-    #end
-  #end  
+   respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @myevents }
+    end
+  end  
 
-  #def new
-   # @myevent = Myevent.new
+ 
+  def show
+  @myevent = Myevent.find(params[:id])
 
-    #respond_to do |format|
-     # format.html # new.html.erb
-     # format.xml  { render :xml => @myevent }
-   # end
-  #end
-
- # def create
-  #  @myevent = Myevent.new(params[:event])
-
-    #respond_to do |format|
-    #  if @myevent.save
-     #   format.html { redirect_to(@myevent, :notice => 'Event was successfully created.') }
-    #    format.xml  { render :xml => @myevent, :status => :created, :location => @myevent }
-     # else
-    #    format.html { render :action => "new" }
-     #   format.xml  { render :xml => @myevent.errors, :status => :unprocessable_entity }
-     # end
-    #end
-  #end
-
- # def show
-   # @myevent = Myevent.find(params[:id])
-
-   # respond_to do |format|
-     # format.html # show.html.erb
-    #  format.xml  { render :xml => @myevent }
-    #end
- # end
+  respond_to do |format|
+      format.html # show.html.erb
+     format.xml  { render :xml => @myevent }
+    end
+  end
 
 def event 
 end
 
 def cause
+       
+event_date=params[:@myevent][:event_date]
+
+parameters=params["@myevent"]
+# parameters.keys
+
+ @year=parameters["event_date(1i)"]
+ @month=parameters["event_date(2i)"]
+ @day=parameters["event_date(3i)"]
+ @date=Date.strptime("#{@month}/#{@day}/#{@year}", '%m/%d/%Y')
+ @hr=parameters["event_time(4i)"]
+ @min=parameters["event_time(5i)"]
+ @time=DateTime.strptime("#{@month}/#{@day}/#{@year} #{@hr}:#{@min}:0", '%m/%d/%Y %H:%M:%S')
 	#@day=params[:@myevents][:date(1i)] 
 	#@month=params[:@myevents][:date(2i)] 
 	#@year=params[:@myevents][:date(3i)]
 	#@date=Date.civil(@day.to_i,@month.to_i,@year.to_i)
-	puts "*******************************************************"
-    puts session[:value]={:mobile_number=>params[:@myevent][:mobile_number], :title=>params[:@myevent][:title], :date=>params[:@myevent][:@date], :time=>params[:@myevent][:time], :venue=>params[:@myevent][:venue], :description=>params[:@myevent][:description]}
-	puts "*******************************************************"
-
-
-	puts "*******************************************************"
-
-#puts time=params{[:@myevents][:date(1i)] + "-" + "" + params[:@myevents][:date(2i)] + "-" + "" + params[:@myevents][:date(3i)]}
-#Date.civil
-	puts "*******************************************************"
+	
+    puts session[:value]={:mobile_number=>params[:@myevent][:mobile_number], :title=>params[:@myevent][:title], :date=>@date, :time=>@time, :venue=>params[:@myevent][:venue], :description=>params[:@myevent][:description]}
 
 end
 
@@ -71,57 +54,45 @@ end
 def education
     session[:value][:cause]='education'
     puts session[:value].inspect
-     @org=Organisation.find_by_category("education").organisation_name
+     @org=Organisation.find_all_by_category("education")
 end
 
 def pollution
 	session[:value][:cause]="pollution"
-	@org=Organisation.find_by_category("pollution").organisation_name
+	@org=Organisation.find_all_by_category("pollution")
+
 end
 
 def food
 	session[:value][:cause]="food"
 	@org=Organisation.find_all_by_category("food")
-puts "============================="
-puts @org.inspect
-puts "============================="
 end
 
 def environment
      session[:value][:cause]="environment"
      @org=Organisation.find_all_by_category("environment")
-puts "============================="
-puts @org.inspect
+		@org.each do |a|
+		puts a.organisation_name
+		end
 
-puts "============================="
-@org.each do |a|
-	puts a.organisation_name
-end
-#puts "============================="
 end
 
 def template
 
-puts "============================="
-puts session[:value][:member_id]=current_member.id
-puts "============================="
+ session[:value][:member_id]=current_member.id
  session[:value][:organisation_name]=params[:@myevent][:organisation_name]
  session[:value][:share_amount]=params[:@myevent][:share_amount]
-puts "============================="
-puts session[:value][:organisation_name]
-puts "============================="
+
 
 end
 
 def message
 #@a=Contact.find_all_by_member_id(current_member.id).email
-#puts "============================="
 #@email=Array.new
 #@a.each do |a|
 # @email<< a.email
 #end
-#puts @email.inspect
-#puts "============================="
+
  
   if params[:Template]=="Template1"
     session[:value][:message] ="We’ll dance and cheer as a birthday is here . She will be turning one more year older so, let’s shout “happy birthday to you!"
@@ -130,21 +101,13 @@ def message
   else
     session[:value][:message] ="We eagerly look forward to your joining us on this occasion . Please don't forget to bring your family along."
   end
-puts "----------------------------------------------"
-puts session[:value][:message]
-puts "----------------------------------------------"
+
 end
 
 
 def invitation
 	session[:value][:message]=params[:@myevent][:message]
 end
-
-#def display_eventpg
-#@a=Myevent.new(params[:@myevent])
-#@a.save
-#end
-
 
 
 end

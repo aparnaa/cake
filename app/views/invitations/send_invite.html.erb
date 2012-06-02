@@ -1,6 +1,12 @@
+<%= render :partial => "layouts/aft_signedin" %>
+<%= render :partial => "layouts/last" %>
+
+<div  style="position:absolute; left:150px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
+
+
 <h4>Thank You </h4>
 
-<h3> Message Sent </h3>
+<h3> Your Message Is Sent </h3>
 <table>
 <tr>
 <td>Event Name </td>
@@ -8,11 +14,11 @@
 </tr>
 <tr>
 <td>Date </td>
-<td><%=@myevent.date%></td></ br>
+<td><%=@myevent.event_date%></td></ br>
 </tr>
 <tr>
 <td>Time </td>
-<td><%=@myevent.time%></td></ br>
+<td><%=@myevent.event_time.strftime("%H:%M")%></td></ br>
 </tr>
 <tr>
 <td>Venue </td>
@@ -30,6 +36,8 @@
 <td>Organisation: </td>
 <td><%=@myevent.organisation_name%></td></ br>
 </tr>
+
 </table>
 
+<%= button_to "Gift Now",  transactions_new_path, :method => :get %>
 

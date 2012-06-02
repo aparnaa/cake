@@ -14,7 +14,7 @@
     <th></th>
     <th></th>
   </tr>
-
+<%unless @organisations.nil?%>
 <% @organisations.each do |organisation| %>
   <tr>
     <td><%= organisation.organisation_name %></td>
@@ -25,10 +25,13 @@
     <td><%= organisation.website %></td>
     <td><%= organisation.email %></td>
     <td><%= organisation.status %></td>
+<%else%>
+    <p style="color: red; font-size: 40pt"> No Blogs are saved!!!</p>
     <td><%= link_to 'Show', organisation %></td>
     <td><%= link_to 'Edit', edit_organisation_path(organisation) %></td>
     <td><%= link_to 'Destroy', organisation, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
+<% end %>
 <% end %>
 </table>
 

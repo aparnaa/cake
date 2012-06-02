@@ -1,3 +1,9 @@
+<%= render :partial => "layouts/aft_signedin" %>
+<%= render :partial => "layouts/last" %>
+
+<div  style="position:absolute; left:150px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
+
+
 <h1>CREATE AN EVENT</h1>
 
 <%=form_for :@myevent, :url=>{:action=>'cause', :controller=>'myevents'} do |f|%>
@@ -13,11 +19,11 @@
   </div>
   <div class="field">
     <%= f.label :date %><br />
-    <%= f.date_select :date %>
+    <%= select_date:myevent, :event_date %>
   </div>
   <div class="field">
     <%= f.label :time %><br />
-    <%= f.time_select :time %>
+    <%= select_time(:myevent,:event_time, :order => [:year, :month, :day]) %>
   </div>
   <div class="field">
     <%= f.label :venue %><br />

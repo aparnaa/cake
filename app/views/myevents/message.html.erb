@@ -1,3 +1,8 @@
+<%= render :partial => "layouts/aft_signedin" %>
+<%= render :partial => "layouts/last" %>
+
+<div  style="position:absolute; left:150px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
+
 <%=form_for :@myevent, :url=>{:action=>'event_create', :controller=>'invitations'} do |f|%>
 
  <%= f.label :Message %><br />
@@ -5,8 +10,8 @@
 
 <td><%=f.hidden_field :mobile_number, :value=>session[:value][:mobile_number]%></td>
 <td><%=f.hidden_field :title, :value=>session[:value][:title]%></td>
-<td><%=f.hidden_field :date, :value=>session[:value][:date]%></td>
-<td><%=f.hidden_field :time, :value=>session[:value][:time]%></td>
+<td><%=f.hidden_field :event_date, :value=>session[:value][:date]%></td>
+<td><%=f.hidden_field :event_time, :value=>session[:value][:time]%></td>
 <td><%=f.hidden_field :venue, :value=>session[:value][:venue]%></td>
 <td><%=f.hidden_field :description, :value=>session[:value][:description]%></td>
 <td><%=f.hidden_field :cause, :value=>session[:value][:cause]%></td>

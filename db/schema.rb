@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120530082136) do
+ActiveRecord::Schema.define(:version => 20120601124621) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -35,15 +35,6 @@ ActiveRecord::Schema.define(:version => 20120530082136) do
     t.datetime "updated_at"
     t.integer  "sender"
     t.text     "message"
-  end
-
-  create_table "invites", :force => true do |t|
-    t.integer  "sender"
-    t.integer  "receiver"
-    t.text     "message"
-    t.string   "subject"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "invoices", :force => true do |t|

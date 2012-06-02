@@ -1,6 +1,11 @@
+<%= render :partial => "layouts/aft_signedin" %>
+<%= render :partial => "layouts/last" %>
+
+<div  style="position:absolute; left:150px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
+
 <p id="notice"><%= notice %></p>
 <div align=center>
-<table border="1" cellspacing="20">
+<table border="1" cellspacing="30">
 <TABLE BORDER CELLPADDING=10>
 
 <p>

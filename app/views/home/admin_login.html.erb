@@ -1,12 +1,14 @@
 <%= render :partial => "layouts/first" %>
+<%= render :partial => "layouts/last" %>
 <div  style="position:absolute; left:4px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <h1> admin page </h1>
 
 <% if member_signed_in? %>
 <%=@user = current_member.role%>
-<h4><%= link_to "Logout", destroy_member_session_path, :method => :delete %></h4>
+
 <h4><%= link_to "My Profile", edit_member_registration_path, :method => :get %></h4>
 <h4><%= link_to "Organisation",  organisations_path, :method => :get %></h4>
+<h4><%= link_to "Logout", destroy_member_session_path, :method => :delete %></h4>
 
 
 

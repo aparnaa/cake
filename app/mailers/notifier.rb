@@ -2,7 +2,8 @@ class Notifier < ActionMailer::Base
   default :from => "admin@gmail.com"
   def send_mail(mail,myevent)
   @title=myevent.title
-  @date=myevent.date
+  @event_date=myevent.event_date
+  @event_time=myevent.event_time.strftime("%H:%M")
   @venue=myevent.venue
   @description=myevent.description
   @mail=mail 
