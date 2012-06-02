@@ -24,4 +24,4 @@ production:
   username: root
   password: root
   timeout: 5000
-  encoding: UTF8
+ # encoding: UTF8
