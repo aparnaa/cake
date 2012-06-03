@@ -21,7 +21,9 @@
     <%= f.label :"Share Amount" %>  <br />
     <%= f.text_field :share_amount %> %
 </div>
-   <%=f.submit 'Continue'%> 
+   
+<%=f.submit 'Continue'%> 
+<script>
   var f1 = new LiveValidation('_myevent_share_amount');
 f1.add( Validate.Presence ); 
 </script>

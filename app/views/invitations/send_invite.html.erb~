@@ -14,11 +14,11 @@
 </tr>
 <tr>
 <td>Date </td>
-<td><%=@myevent.date%></td></ br>
+<td><%=@myevent.event_date%></td></ br>
 </tr>
 <tr>
 <td>Time </td>
-<td><%=@myevent.time%></td></ br>
+<td><%=@myevent.event_time.strftime("%H:%M")%></td></ br>
 </tr>
 <tr>
 <td>Venue </td>
@@ -33,9 +33,7 @@
 <td><%=@myevent.cause%></td></ br>
 </tr>
 <tr>
-<td>Organisation: </td>
-<td><%=@myevent.organisation_name%></td></ br>
-</tr>
+
 
 </table>
 
