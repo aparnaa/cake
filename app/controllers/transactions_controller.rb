@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+before_filter :authenticate_member!
   def index
 	 @transaction=Transaction.all
 	 @id=current_member.id
@@ -45,7 +46,7 @@ class TransactionsController < ApplicationController
    		# puts "Payment complete!"
     #puts "Transaction is complete!"
     flash[:notice] = "Thank you, Transaction is sucessfully completed"
-    redirect_to '/home/aboutus'
+    redirect_to '/home/aft_login'
      #@transaction.save
 end
   	   else
