@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120603144436) do
+ActiveRecord::Schema.define(:version => 20120603145712) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20120603144436) do
   create_table "contacts", :force => true do |t|
     t.string   "contact_name"
     t.string   "email"
-    t.integer  "phone_no"
+    t.integer  "phone_no",     :limit => 8
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "member_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20120603144436) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "sender"
+    t.text     "message"
   end
 
   create_table "invites", :force => true do |t|
@@ -90,7 +91,7 @@ ActiveRecord::Schema.define(:version => 20120603144436) do
   add_index "members", ["reset_password_token"], :name => "index_members_on_reset_password_token", :unique => true
 
   create_table "myevents", :force => true do |t|
-    t.integer  "mobile_number"
+    t.integer  "mobile_number",     :limit => 8
     t.string   "title"
     t.date     "date"
     t.time     "time"
@@ -112,7 +113,7 @@ ActiveRecord::Schema.define(:version => 20120603144436) do
   end
 
   create_table "organisations", :force => true do |t|
-    t.string   "organisation_name"
+    t.integer  "organisation_name", :limit => 8
     t.string   "contact_person"
     t.string   "address_line1"
     t.string   "address_line2"
