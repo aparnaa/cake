@@ -1,5 +1,6 @@
 <%= render :partial => "layouts/aft_signedin" %>
 <%= render :partial => "layouts/last" %>
+<script src="/javascripts/livevalidation_standalone.js"></script>
 
 <div  style="position:absolute; left:150px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 
@@ -21,7 +22,9 @@
     <%= f.text_field :share_amount %> %
 </div>
    <%=f.submit 'Continue'%> 
-  
+  var f1 = new LiveValidation('_myevent_share_amount');
+f1.add( Validate.Presence ); 
+</script>
 
 <% end %>
 

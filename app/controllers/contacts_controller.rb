@@ -41,7 +41,7 @@ class ContactsController < ApplicationController
   # POST /contacts.xml
   def create
     @contact = Contact.new(params[:contact])
-
+	@contact.member_id=current_member.id
     respond_to do |format|
       if @contact.save
         format.html { redirect_to(@contact, :notice => 'Contact was successfully created.') }
