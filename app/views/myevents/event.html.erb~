@@ -1,6 +1,6 @@
 <%= render :partial => "layouts/aft_signedin" %>
 <%= render :partial => "layouts/last" %>
-
+<script src="/javascripts/livevalidation_standalone.js"></script>
 <div  style="position:absolute; left:150px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 
 
@@ -19,11 +19,11 @@
   </div>
   <div class="field">
     <%= f.label :date %><br />
-    <%= select_date:myevent, :event_date %>
+    <%= f.date_select :event_date %>
   </div>
   <div class="field">
     <%= f.label :time %><br />
-    <%= select_time(:myevent,:event_time, :order => [:year, :month, :day]) %>
+    <%= f.time_select :event_time %>
   </div>
   <div class="field">
     <%= f.label :venue %><br />
@@ -38,6 +38,25 @@
 
   </div>
 </table>
+
+ <script>
+var f1 = new LiveValidation('_myevent_mobile_number');
+f1.add( Validate.Presence ); 
+</script>
+ <script>
+var f2 = new LiveValidation('_myevent_title');
+f2.add( Validate.Presence ); 
+</script>
+ <script>
+
+var f3 = new LiveValidation('_myevent_venue');
+f3.add( Validate.Presence );
+</script> 
+ <script>
+var f4 = new LiveValidation('_myevent_description');
+f4.add( Validate.Presence ); 
+</script>
+
 <% end %>
 
 
