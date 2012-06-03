@@ -90,9 +90,7 @@ class InvitationsController < ApplicationController
   end
 
   def event_create
-		#time=params[:myevents][:date(1i)] +"-"+ ""+params[:myevents][:date(2i)]
-		#@a=Myevent.new(:description=>params[:myevents][:description],:title=>ffffffffffffffffff,:date=>time	)
-	
+
 	@a=Myevent.new(params[:@myevent])
 	@a.save
 		

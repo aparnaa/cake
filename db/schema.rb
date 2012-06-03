@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20120601124621) do
   create_table "contacts", :force => true do |t|
     t.string   "contact_name"
     t.string   "email"
-    t.integer  "phone_no",     :limit => 8
+    t.integer  "phone_no"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "member_id"
@@ -30,11 +30,20 @@ ActiveRecord::Schema.define(:version => 20120601124621) do
 
   create_table "invitations", :force => true do |t|
     t.integer  "myevent_id"
+    t.string   "firstname"
+    t.string   "lastname"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "invites", :force => true do |t|
     t.integer  "sender"
+    t.integer  "receiver"
     t.text     "message"
+    t.string   "subject"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "invoices", :force => true do |t|
@@ -48,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20120601124621) do
   end
 
   create_table "members", :force => true do |t|
-    t.string   "email",                                 :default => "",     :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "",     :null => false
+    t.string   "email",                                 :default => "", :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -66,8 +75,8 @@ ActiveRecord::Schema.define(:version => 20120601124621) do
     t.datetime "updated_at"
     t.string   "firstname"
     t.string   "lastname"
-    t.string   "role",                                  :default => "user"
-    t.integer  "mobile",                 :limit => 8
+    t.string   "role"
+    t.integer  "mobile"
     t.string   "address_line1"
     t.string   "address_line2"
     t.string   "city"
@@ -80,18 +89,24 @@ ActiveRecord::Schema.define(:version => 20120601124621) do
   add_index "members", ["reset_password_token"], :name => "index_members_on_reset_password_token", :unique => true
 
   create_table "myevents", :force => true do |t|
-    t.integer  "mobile_number",     :limit => 8
+    t.integer  "mobile_number"
     t.string   "title"
-    t.integer  "date"
+    t.date     "date"
     t.time     "time"
     t.string   "venue"
     t.text     "description"
     t.string   "cause"
     t.string   "organisation_name"
     t.float    "share_amount"
+    t.integer  "message_id"
     t.integer  "member_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "contact_id"
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.integer  "contactid"
     t.text     "message"
   end
 
