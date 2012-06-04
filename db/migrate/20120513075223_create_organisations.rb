@@ -5,7 +5,7 @@ class CreateOrganisations < ActiveRecord::Migration
       t.string :contact_person
       t.string :address_line1
       t.string :address_line2
-      t.integer :phone
+      t.string :phone
       t.string :website
       t.string :email
       t.string :status
