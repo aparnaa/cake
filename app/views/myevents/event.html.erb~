@@ -11,7 +11,7 @@
 
 <table border=1>
 <div class="field">
-    <%= f.label :mobile_number %><br />
+    <%= f.label :phone_number %><br />
     <%= f.text_field :mobile_number %>
   </div>
   <div class="field">
@@ -43,6 +43,8 @@
  <script>
 var f1 = new LiveValidation('_myevent_mobile_number');
 f1.add( Validate.Presence ); 
+
+f1.add( Validate.Numericality, { onlyInteger: true } );
 </script>
  <script>
 var f2 = new LiveValidation('_myevent_title');

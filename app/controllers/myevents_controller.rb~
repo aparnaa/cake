@@ -42,7 +42,7 @@ parameters=params["@myevent"]
 	#@year=params[:@myevents][:date(3i)]
 	#@date=Date.civil(@day.to_i,@month.to_i,@year.to_i)
 	
-    puts session[:value]={:mobile_number=>params[:@myevent][:mobile_number], :title=>params[:@myevent][:title], :date=>@date, :time=>@time, :venue=>params[:@myevent][:venue], :description=>params[:@myevent][:description]}
+    puts session[:value]={:phone_number=>params[:@myevent][:mobile_number], :title=>params[:@myevent][:title], :date=>@date, :time=>@time, :venue=>params[:@myevent][:venue], :description=>params[:@myevent][:description]}
 
 end
 
