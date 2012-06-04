@@ -1,3 +1,4 @@
+class OrganisationsController < ApplicationController
 # belongs_to :member, :class_name  => 'member'
  # GET /organisations
   # GET /organisations.xml
