@@ -25,17 +25,17 @@ end
 
 def cause
        
-event_date=params[:@myevent][:event_date]
+date=params[:@myevent][:date]
 
 parameters=params["@myevent"]
 # parameters.keys
 
- @year=parameters["event_date(1i)"]
- @month=parameters["event_date(2i)"]
- @day=parameters["event_date(3i)"]
+ @year=parameters["date(1i)"]
+ @month=parameters["date(2i)"]
+ @day=parameters["date(3i)"]
  @date=Date.strptime("#{@month}/#{@day}/#{@year}", '%m/%d/%Y')
- @hr=parameters["event_time(4i)"]
- @min=parameters["event_time(5i)"]
+ @hr=parameters["time(4i)"]
+ @min=parameters["time(5i)"]
  @time=DateTime.strptime("#{@month}/#{@day}/#{@year} #{@hr}:#{@min}:0", '%m/%d/%Y %H:%M:%S')
 	#@day=params[:@myevents][:date(1i)] 
 	#@month=params[:@myevents][:date(2i)] 

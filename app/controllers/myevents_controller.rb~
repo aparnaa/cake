@@ -25,38 +25,25 @@ end
 
 def cause
        
-event_date=params[:@myevent][:event_date]
-puts "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
-puts parameters=params["@myevent"]
-puts parameters.keys
-puts "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM"
-puts @year=parameters["event_date(1i)"]
-puts @month=parameters["event_date(2i)"]
-puts @day=parameters["event_date(3i)"]
-puts @date=Date.strptime("#{@month}/#{@day}/#{@year}", '%m/%d/%Y')
-  puts  @hr=parameters["event_time(4i)"]
- puts   @min=parameters["event_time(5i)"]
- @time=Date.strptime("#{@hr}/#{@min}", '%hh/%mm')
+date=params[:@myevent][:date]
 
+parameters=params["@myevent"]
+# parameters.keys
+
+ @year=parameters["date(1i)"]
+ @month=parameters["date(2i)"]
+ @day=parameters["date(3i)"]
+ @date=Date.strptime("#{@month}/#{@day}/#{@year}", '%m/%d/%Y')
+ @hr=parameters["time(4i)"]
+ @min=parameters["time(5i)"]
+ @time=DateTime.strptime("#{@month}/#{@day}/#{@year} #{@hr}:#{@min}:0", '%m/%d/%Y %H:%M:%S')
 	#@day=params[:@myevents][:date(1i)] 
 	#@month=params[:@myevents][:date(2i)] 
 	#@year=params[:@myevents][:date(3i)]
 	#@date=Date.civil(@day.to_i,@month.to_i,@year.to_i)
-	puts "*******************************************************"
-    puts session[:value]={:mobile_number=>params[:@myevent][:mobile_number], :title=>params[:@myevent][:title], :date=>event_date, :time=>event_time, :venue=>params[:@myevent][:venue], :description=>params[:@myevent][:description]}
-	puts "*******************************************************"
+	
+    puts session[:value]={:mobile_number=>params[:@myevent][:mobile_number], :title=>params[:@myevent][:title], :date=>@date, :time=>@time, :venue=>params[:@myevent][:venue], :description=>params[:@myevent][:description]}
 
-
-	puts "*******************************************************"
-
-
-#Date.civil
-	puts "*******************************************************"
-
-p"--------------------"
-p event_date
-p event_time
-p "-------------------"
 end
 
 def orgname
