@@ -41,7 +41,11 @@ class OrganisationsController < ApplicationController
   # POST /organisations
   # POST /organisations.xml
   def create
-    @organisation = Organisation.new(params[:organisation])
+   # @organisation = Organisation.new(params[:organisation])
+   @organisation = Organisation.new( :phone=>params[:organisation][:phone].to_s, :organisation_name=> params[:organisation][:organisation_name],
+	      :contact_person=> params[:organisation][:contact_person], :address_line1=> params[:organisation][:address_line1],
+	      :address_line2=> params[:organisation][:address_line2], :website=> params[:organisation][:website],  :email=> params[:organisation][:email], :status=> params[:organisation][:status],  :created_at=> params[:organisation][:created_at],  
+		  :updated_at=> params[:organisation][:updated_at], :category=> params[:organisation][:category], :description=> params[:organisation][:description]  )
 
     respond_to do |format|
       if @organisation.save
@@ -64,11 +68,16 @@ class OrganisationsController < ApplicationController
   def update
     @organisation = Organisation.find(params[:id])
     params[:organisation][:phone]=params[:organisation][:phone].to_s
+    
     respond_to do |format|
-      if @organisation.update_attributes(params[:organisation])
+	    # if @organisation.update_attributes(:phone=>params[:organisation][:phone].to_s) 
+      if @organisation.update_attributes(:phone=>params[:organisation][:phone].to_s, :organisation_name=> params[:organisation][:organisation_name],
+	      :contact_person=> params[:organisation][:contact_person], :address_line1=> params[:organisation][:address_line1],
+	      :address_line2=> params[:organisation][:address_line2], :website=> params[:organisation][:website],  :email=> params[:organisation][:email], :status=> params[:organisation][:status],  :created_at=> params[:organisation][:created_at],  
+		  :updated_at=> params[:organisation][:updated_at], :category=> params[:organisation][:category], :description=> params[:organisation][:description]  )
         format.html { redirect_to(@organisation, :notice => 'Organisation was successfully updated.') }
         format.xml  { head :ok }
-      else
+      else 
         format.html { render :action => "edit" }
         format.xml  { render :xml => @organisation.errors, :status => :unprocessable_entity }
       end
