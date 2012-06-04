@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120603145712) do
+ActiveRecord::Schema.define(:version => 20120604042823) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20120603145712) do
   create_table "contacts", :force => true do |t|
     t.string   "contact_name"
     t.string   "email"
-    t.integer  "phone_no",     :limit => 8
+    t.string   "phone_no"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "member_id"
