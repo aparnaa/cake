@@ -63,7 +63,7 @@ class OrganisationsController < ApplicationController
   # PUT /organisations/1.xml
   def update
     @organisation = Organisation.find(params[:id])
-
+    params[:organisation][:phone]=[:organisation][:phone].to_s
     respond_to do |format|
       if @organisation.update_attributes(params[:organisation])
         format.html { redirect_to(@organisation, :notice => 'Organisation was successfully updated.') }
