@@ -19,7 +19,7 @@ development:
 
 production: 
   adapter: mysql2
-  database: sharemycake_prod123
+  database: sharemycake_prod12345
   pool: 5
   username: root
   password: root
