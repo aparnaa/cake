@@ -19,8 +19,9 @@ before_filter :authenticate_member!
    ActiveMerchant::Billing::Base.mode = :test
 
    credit_card = ActiveMerchant::Billing::CreditCard.new(
- # :number     => '4785636150538332',
-:number     => "#{params[:transaction][:card_number]}",
+ #my_paypal => 4513768958863924 
+ # :number     => '4785636150538332', 
+  :number     => "#{params[:transaction][:card_number]}",
   :month      => '8',
   :year       => '2019',
   :first_name => 'Tobias',

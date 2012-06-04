@@ -1,7 +1,7 @@
 class InvitationsController < ApplicationController
 
   #before_filter :myevent
-
+before_filter :authenticate_member!
   # GET /invitations
   # GET /invitations.xml
   def index

@@ -1,6 +1,6 @@
 class MyeventsController < ApplicationController
   
-
+before_filter :authenticate_member!
   def index
     @myevent = Myevent.all
 

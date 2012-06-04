@@ -1,5 +1,6 @@
 <%= render :partial => "layouts/first" %>
 <%= render :partial => "layouts/last" %>
+<script src="/javascripts/livevalidation_standalone.js"></script>
 
 <div  style="position:absolute; left:4px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 
