@@ -2,7 +2,7 @@
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
   adapter: mysql2
-  database: smc_dev
+  database: sharemycake_dev
   pool: 5
   username: root
   password: root
@@ -19,7 +19,7 @@ development:
 
 production: 
   adapter: mysql2
-  database: smc_production
+  database: sharemycake_prod123
   pool: 5
   username: root
   password: root
