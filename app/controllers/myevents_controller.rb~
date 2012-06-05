@@ -2,14 +2,20 @@ class MyeventsController < ApplicationController
   
 before_filter :authenticate_member!
   def index
-    @myevent = Myevent.all
-
+        @myevent = Myevent.find_all_by_member_id(current_member.id)
    respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @myevents }
     end
   end  
 
+ def adminindex
+    @myevent = Myevent.all
+   respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @myevents }
+    end
+  end  
  
   def show
   @myevent = Myevent.find(params[:id])
@@ -21,6 +27,7 @@ before_filter :authenticate_member!
   end
 
 def event 
+
 end
 
 def cause
@@ -109,5 +116,6 @@ def invitation
 	session[:value][:message]=params[:@myevent][:message]
 end
 
+ 
 
 end

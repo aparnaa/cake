@@ -25,9 +25,9 @@ src="Login_files/u24.png" border="0" alt=""></span>
 <DIV id=u26_rtf><span style=" font-family:'Arial'; color:#444444; font-size:13px;"><b>E-mail address</b></span></DIV></DIV>
 <DIV id=u27 style="position:absolute; left:254px; top:365px; width:150px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u27_rtf><span style=" font-family:'Arial'; color:#444444; font-size:13px;"><b>Password</b></span></DIV></DIV>
-<div style="position:absolute; left:254px; top:322px; width:386px; height:40px; ; background-color:#FFFFFF; text-align: left ; font-family:'Verdana'; font-size: 24px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"   ><%= f.email_field :email %></div></div>
+<div style="position:absolute; left:254px; top:322px; width:386px; height:40px; ; background-color:#E6E6FA; text-align: left ; font-family:'Verdana'; font-size: 24px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"   ><%= f.email_field :email %></div></div>
 
-<div style="position:absolute; left:254px; top:385px; width:386px; height:45px; ; background-color:#FFFFFF; text-align: left ; font-family:'Verdana'; font-size: 24px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"   ><%= f.password_field :password %></div>
+<div style="position:absolute; left:254px; top:385px; width:386px; height:45px; ; background-color:#E6E6FA; text-align: left ; font-family:'Verdana'; font-size: 24px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"   ><%= f.password_field :password %></div>
 
 <DIV id=u30container style="position:absolute; left:256px; top:442px; width:220px; height:16px; ; ; text-align: left " >
 <DIV id=u31 style="position:absolute; left:16px; top:0px; width:202px; height:16px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >

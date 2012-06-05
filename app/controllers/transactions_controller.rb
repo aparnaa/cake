@@ -43,8 +43,9 @@ before_filter :authenticate_member!
 		if response.success?
     gateway.capture(1000, response.authorization)
 
-		@transaction.save
-   		# puts "Payment complete!"
+	
+
+ 		# puts "Payment complete!"
     #puts "Transaction is complete!"
     flash[:notice] = "Thank you, Transaction is sucessfully completed"
     redirect_to '/home/aft_login'

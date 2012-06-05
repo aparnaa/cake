@@ -34,7 +34,7 @@ get "transactions/error"
   get "myevents/create"
 
   get "myevents/show"
-
+  get "myevents/adminindex"
   resources :events
 
   resources :contacts
@@ -63,7 +63,9 @@ match 'invitations/event_detail' => 'invitations#event_detail'
 match 'home/aboutus' => 'home#aboutus'
 match 'transactions/new' => 'transactions#new'
 match 'transactions/create' => 'transactions#create'
-match 'invoices/calculation'=> 'invoices#calculation'	
+match 'invoices/calculation'=> 'invoices#calculation'
+match 'myevents/index' => 'myevents#index'
+match 'myevents/show/:id' => 'myevents#show'	
 
 	match '/inbox'=> 'invites#inbox'
    	match '/outbox'=> 'invites#outbox'

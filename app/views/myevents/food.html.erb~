@@ -10,7 +10,7 @@
 
       <%- @org.each do |ca| %>
 
-   <%= f.radio_button ca.organisation_name, ca.id%><%= ca.organisation_name %>
+   <%= f.radio_button ca.organisation_name, ca.id %><%= ca.organisation_name %>
  
    <% end %>
    
