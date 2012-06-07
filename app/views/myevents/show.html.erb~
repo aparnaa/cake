@@ -42,4 +42,4 @@
 </div>
 </table>
 
-<%= link_to 'Back', myevents_index_path %>
+<%= link_to 'Home', root_path %>

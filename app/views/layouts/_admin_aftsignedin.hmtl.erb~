@@ -25,7 +25,7 @@ src="/images/bdaygift.jpeg" border="0" alt=""></span>
 <DIV id=u6 style="position:absolute; left:23px; top:92px; width:48px; height:18px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u6_rtf><span style=" font-family:'Arial'; color:#996600; font-size:15px;"><%= link_to "Home", root_path %><b>&nbsp; </b></span></DIV></DIV>
 <DIV id=u7 style="position:absolute; left:90px; top:92px; width:66px; height:18px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
-<DIV id=u7_rtf><span style=" color:#996600; font-size:15px;"><b><%= link_to "Create Event",  myevents_event_path %></b></span></DIV></DIV>
+<DIV id=u7_rtf><span style=" color:#996600; font-size:15px;"><b><%= link_to "Event",  myevents_index_path %></b></span></DIV></DIV>
 <DIV id=u7ann style="font-size:1px; position:absolute; left:147px; top:88px; width:1px; height:1px; overflow:visible"></DIV>
 
 <DIV id=ou8 style="position:absolute; left:741px; top:90px; width:156px; height:24px;; overflow:visible">
@@ -44,7 +44,7 @@ src="Celebrant-after-login-page_files/u8.png" border="0" alt=""></span>
 <IMG id=u8 src="Resources/transparent.gif" style="position:absolute; left:741px; top:90px; width:155px; height:23px"  >
 
 <DIV id=u10 style="position:absolute; left:168px; top:92px; width:131px; height:18px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
-<DIV id=u10_rtf><span style=" color:#996600; font-size:15px;"><b><%= link_to "My Contacts",  contacts_path, :method => :get %></b></span></DIV></DIV>
+<DIV id=u10_rtf><span style=" color:#996600; font-size:15px;"><b><%= link_to "About", home_aboutus_path %></b></span></DIV></DIV>
 <DIV id=u10ann style="font-size:1px; position:absolute; left:290px; top:88px; width:1px; height:1px; overflow:visible"></DIV>
 
 <DIV id=u11 style="position:absolute; left:917px; top:18px; width:52px; height:15px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
@@ -52,7 +52,7 @@ src="Celebrant-after-login-page_files/u8.png" border="0" alt=""></span>
 <DIV id=u11ann style="font-size:1px; position:absolute; left:960px; top:14px; width:1px; height:1px; overflow:visible"></DIV>
 
 <DIV id=u12 style="position:absolute; left:762px; top:18px; width:76px; height:15px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
-<DIV id=u12_rtf><span style=" color:#006699; font-size:12px;"><b><%= link_to "Dashboard",  home_aft_login_path %></b></span></DIV></DIV>
+<DIV id=u12_rtf><span style=" color:#006699; font-size:12px;"><b><%= link_to "Dashboard",  home_admin_login_path %></b></span></DIV></DIV>
 <DIV id=u12ann style="font-size:1px; position:absolute; left:829px; top:14px; width:1px; height:1px; overflow:visible"></DIV>
 
 <DIV id=u13 style="position:absolute; left:314px; top:92px; width:103px; height:18px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >

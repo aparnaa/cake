@@ -121,20 +121,11 @@ src="My-Contacts_files/u13.png" border="0" alt=""></span>
 </span>
 <IMG id=u16 src="Resources/transparent.gif" style="position:absolute; left:338px; top:129px; width:16px; height:16px"   >
 
-<DIV id=ou17 style="position:absolute; left:0px; top:0px; width:981px; height:81px;; overflow:visible">
-
-<span style="position:absolute; left:-3px; top:-3px; width:989px; height:89px; ;
-filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='My-Contacts_files/u17.png',sizingMethod='scale');
-"><img style="width:989px; height:89px; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);" 
-src="My-Contacts_files/u17.png" border="0" alt=""></span>
-
-</DIV>
-<DIV id=u17container style="position:absolute; left:0px; top:0px; width:981px; height:81px;; overflow:visible;">
 
 <DIV id=u18 style="position:absolute; left:2px; top:32px; width:976px; height:16px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u18_rtf>&nbsp;</DIV></DIV>
 </DIV>
-<IMG id=u17 src="Resources/transparent.gif" style="position:absolute; left:0px; top:0px; width:980px; height:80px"  >
+
 
 <DIV id=ou19 style="position:absolute; left:13px; top:11px; width:154px; height:60px;; overflow:visible">
 
@@ -425,7 +416,7 @@ src="My-Contacts_files/u116.png" border="0" alt=""></span>
 filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='My-Contacts_files/u117.png',sizingMethod='scale');"><img style="width:20px; height:20px; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);" 
 src="My-Contacts_files/u117.png" border="0" alt=""></span>
 </span>
-<IMG id=u117 src="Resources/transparent.gif" style="position:absolute; left:896px; top:690px; width:20px; height:20px"   >
+
 
 <span style="position:absolute; left:46px; top:602px; width:176px; height:30px">
 <span id=ou118 style="position:absolute;left:0px;top:0px;width:176px;height:30px;

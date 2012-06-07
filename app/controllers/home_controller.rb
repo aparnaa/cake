@@ -31,5 +31,7 @@ end
   def aboutus
   end
 
- 
+  def search
+   @organisation=Organisation.find_all_by_category(params[:id])
+ end
 end

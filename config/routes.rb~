@@ -1,52 +1,39 @@
 Newapp::Application.routes.draw do
 
-  get "invoices/index"
+  #get "invoices/index"
+  #get "invoices/show"
+  #get "transactions/new"
 
-  get "invoices/show"
+   get "transactions/index"
+   get "transactions/error"
+   get "transactions/done"
+  #resources :myevents  
+      #resources :myevents do
+  #resources :posts
+  #end
 
-  get "transactions/index"
-
-  get "transactions/new"
-get "transactions/error"
-
-
-
-
-  get "invites/inbox"
-
-  get "invites/outbox"
-
-#  get "messages/inbox"
-
- # get "messages/outbox"
-
-  resources :invitations
-
-  resources :comments
-
-  resources :posts
-
-  resources :invoices
+  #resources :invoices
   get "home/orgshow"
   get "home/orgdetail"
-  get "myevents/new"
-
-  get "myevents/create"
-
-  get "myevents/show"
   get "myevents/adminindex"
-  resources :events
 
+  #get "myevents/new"
+  #get "myevents/create"
+  #get "myevents/show"
+
+  resources :invitations
+  resources :comments
   resources :contacts
-   
   resources :organisations
+
  devise_for :members, :controllers => {:registrations => "registrations"}
-match 'home_aft_login' => 'home#aft_login'
+ 
+  match 'home_aft_login' => 'home#aft_login'
   get "home/aft_login"
   get "home/admin_login"
 devise_for :members
 match 'home/orgdetail/:id'=>'home#orgdetail'
-match 'organisations'=>'organisations#index'
+#match 'organisations'=>'organisations#index'
 match 'members/edit'=>'members#edit'
 match 'myevents/cause' => 'myevents#cause'
 match 'myevents/event' => 'myevents#event'
@@ -61,16 +48,16 @@ match 'invitations/event_create' => 'invitations#event_create'
 match 'invitations/send_invite' => 'invitations#send_invite'
 match 'invitations/event_detail' => 'invitations#event_detail'
 match 'home/aboutus' => 'home#aboutus'
-match 'transactions/new' => 'transactions#new'
+match 'transactions/new/:id' => 'transactions#new'
 match 'transactions/create' => 'transactions#create'
 match 'invoices/calculation'=> 'invoices#calculation'
-match 'myevents/index' => 'myevents#index'
-match 'myevents/show/:id' => 'myevents#show'	
+#match 'myevents/index' => 'myevents#index'
+#match 'myevents/show' => 'myevents#show'	
+match 'devise/home/search' => 'devise/home#search'
+match 'invoices/index' => 'invoices#index'
+match 'invoices/show/:id' => 'invoices#show'
 
-	match '/inbox'=> 'invites#inbox'
-   	match '/outbox'=> 'invites#outbox'
-   	match '/write/:id'=> 'invites#write'
-   	match '/invites/sendmessage'=> 'invites#sendmessage'
+		
 #match 'organisations/user_index' => 'organisations#user_index'
 #match 'invitations/message' => 'invitations#message'
 #match 'organisations'=>'organisations#new'
@@ -124,8 +111,8 @@ match 'myevents/show/:id' => 'myevents#show'
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
-   root :to => "home#homepage"
-   #root :to => "home#admin_login"
+    root :to => "home#homepage"
+  # root :to => "home#admin_login"
 
   # See how all your routes lay out with "rake routes"
 

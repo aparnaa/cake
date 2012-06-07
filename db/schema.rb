@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604042823) do
+ActiveRecord::Schema.define(:version => 20120605141504) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(:version => 20120604042823) do
     t.text     "wishes"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "myevent_id"
   end
 
   create_table "transactions", :force => true do |t|

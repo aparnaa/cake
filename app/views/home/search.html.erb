@@ -1,0 +1,15 @@
+<% if @organisation.present? %>
+
+     <table >
+       
+        <tr>
+            <%  @organisation.each do |f| %>
+            <td><%= link_to f.organisation_name, "/home/orgshow" %></td>
+          
+           <% end %>          
+        </tr>
+    
+        </table>
+    <% else %>
+        <h1> Search not found ! Please try again !!!</h1>
+    <% end %>

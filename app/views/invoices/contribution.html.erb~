@@ -1,0 +1,5 @@
+<h2> You have made the Contribution of </h2>
+
+  Rs. <%= @invoice.org_amt %>
+
+Thank You .

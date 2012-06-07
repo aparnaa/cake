@@ -8,11 +8,14 @@ before_filter :authenticate_member!
 
   def new
 	@transaction=Transaction.new
+       #puts  @eventid=params[:@a][:myevent_id]
+        #@transaction.myevent_id=@eventid
   end
 
   def create
    $value
-    p params[:id]
+p "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"
+   p params[:id]
     $value= params[:id]
    @transaction = Transaction.new(params[:transaction])
 		
@@ -48,8 +51,36 @@ before_filter :authenticate_member!
  		# puts "Payment complete!"
     #puts "Transaction is complete!"
     flash[:notice] = "Thank you, Transaction is sucessfully completed"
-    redirect_to '/home/aft_login'
-     #@transaction.save
+   # redirect_to '/home/aft_login'
+  @transaction.myevent_id=params[:id]  
+ 
+@transaction.save
+ puts  params[:id] 
+ puts @transaction.member_id
+ puts @transaction.id  
+  @trans=Transaction.last
+  @event=Myevent.find_by_id(@trans.myevent_id)
+  @sharepercentage=@event.share_amount
+  @orgamount=(@trans.amount/100)*@sharepercentage
+  @memberamount=@trans.amount-@orgamount
+ 
+  @invoice=Invoice.new
+  @invoice.transaction_id=@trans.id
+  @invoice.member_id=current_member.id
+  @invoice.myevent_id=@trans.myevent_id 	
+  @invoice.org_amt=@orgamount
+  @invoice.member_amt=@memberamount
+  @invoice.save
+# @player=Player.find_by_id(params[:transaction][:player_id])
+# @q.sender=current_member.id
+	# @q.email=params[:@a][:email]
+	# @q.message=params[:message]
+	# @q.myevent_id=@eventid
+       	# @q.save
+   
+
+   redirect_to '/transactions/done'
+
 end
   	   else
     		#puts "Error: #{response.message}"
@@ -59,6 +90,8 @@ end
 	end
   
  def error
+ end
+ def contribution
  end
 
 end

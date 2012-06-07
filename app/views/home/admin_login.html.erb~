@@ -12,6 +12,7 @@
 <h4><%= link_to "Organisation",  organisations_path, :method => :get %></h4>
 <h4><%= link_to "Events",  myevents_adminindex_path %></h4>
 <h4><%#= link_to "Payments", transactions_index_path, :method => :get %></h4>
+<h4><%= link_to "Invoice", invoices_index_path, :method => :get %></h4>
 <h4><%= link_to "Logout", destroy_member_session_path, :method => :delete %></h4>
 
 
