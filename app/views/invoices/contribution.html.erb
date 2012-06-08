@@ -1,5 +1,7 @@
-<h2> You have made the Contribution of </h2>
+<%= render :partial => "layouts/last" %>
+<div  style="position:absolute; left:150px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
+<h2> You have made the Contribution of Rs. <%= @invoice.org_amt %> </h2>
 
-  <%= @invoice.org_amt %>
-Rs. <%#= @contribution %>
-Thank You .
+<h4>Thank You .</h4>
+
+<h3><%= link_to 'home', home_aft_login_path %></h3>
