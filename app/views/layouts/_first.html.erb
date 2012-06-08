@@ -71,7 +71,7 @@ src="/images/bdaygift.jpeg" border="0" alt=""></span>
 
 <DIV id=u22 style="position:absolute; left:600px; top:95px; width:68px; height:16px; font-size:20px; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=u22_rtf><span style=" color:#434343; font-size:20px;"><% if member_signed_in? %>
-<%= link_to "Logout", destroy_member_session_path %> <%else%>
+<%= link_to "Logout", destroy_member_session_path, :method => :delete %> <%else%>
 <%= link_to "Login", new_member_session_path, :method => :get %>
 <%end%>
 </span></DIV></DIV>
