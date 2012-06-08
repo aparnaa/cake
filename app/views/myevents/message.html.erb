@@ -6,7 +6,7 @@
 <%=form_for :@myevent, :url=>{:action=>'event_create', :controller=>'invitations'} do |f|%>
 
  <%= f.label :Message %><br />
-<%= text_area :message,"", :value=>session[:value][:message] %>
+<%= text_area :message,"", :value=>session[:value][:message] , :size=>"20x5"%>
 
 <td><%=f.hidden_field :mobile_number, :value=>session[:value][:mobile_number]%></td>
 <td><%=f.hidden_field :title, :value=>session[:value][:title]%></td>

@@ -1,7 +1,7 @@
 
 <%= render :partial => "layouts/aft_signedin" %>
 <%= render :partial => "layouts/last" %>
-
+<div  style="position:absolute; left:150px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 <DIV id=ou0 style="position:absolute; left:0px; top:119px; width:981px; height:672px;; overflow:visible">
 
 <span style="position:absolute; left:-3px; top:-3px; width:989px; height:680px; ;

@@ -1,6 +1,6 @@
 
-Hi  <%=@mail%> 	
-I have organised 
+Hi  <%=@mail%> ,	
+I have organised a party, 
 <table>
 <th>Details</th>
 <tr>
@@ -10,7 +10,8 @@ I have organised
 <tr><td><%=@date%></td></tr>
 <tr><td><%=@time%></td></tr>
 <tr><td><%=@description%></td></tr>
+<tr><td><%=@message%></td></tr>
 
+</table>
 <tr><%= link_to "Gift Now",  "transactions/new/myevent_id" %></tr>
 <tr><%= link_to "Sign in",  new_member_session_path, :method => :get %></tr>
-</table>

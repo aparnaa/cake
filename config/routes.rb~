@@ -31,6 +31,7 @@ Newapp::Application.routes.draw do
   match 'home_aft_login' => 'home#aft_login'
   get "home/aft_login"
   get "home/admin_login"
+ 
 devise_for :members
 match 'home/orgdetail/:id'=>'home#orgdetail'
 #match 'organisations'=>'organisations#index'
@@ -48,6 +49,8 @@ match 'invitations/event_create' => 'invitations#event_create'
 match 'invitations/send_invite' => 'invitations#send_invite'
 match 'invitations/event_detail' => 'invitations#event_detail'
 match 'home/aboutus' => 'home#aboutus'
+match 'home/works' => 'home#works'
+match 'home/term' => 'home#term'
 match 'transactions/new/:id' => 'transactions#new'
 match 'transactions/create' => 'transactions#create'
 match 'invoices/calculation'=> 'invoices#calculation'
@@ -56,7 +59,7 @@ match 'invoices/calculation'=> 'invoices#calculation'
 match 'devise/home/search' => 'devise/home#search'
 match 'invoices/index' => 'invoices#index'
 match 'invoices/show/:id' => 'invoices#show'
-
+match 'invoices/contribution' => 'invoices#contribution'
 		
 #match 'organisations/user_index' => 'organisations#user_index'
 #match 'invitations/message' => 'invitations#message'

@@ -11,6 +11,7 @@ class Member < ActiveRecord::Base
 has_many :contacts
 has_many :transactions
 has_many :myevents
+has_many :invoices
  #validates :mobile, :length => 10 , :format => { :with => /\A\S[0-9\+\/\(\)\s\-]*\z/i }, :presence => true
 
  

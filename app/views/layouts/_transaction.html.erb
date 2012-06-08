@@ -9,8 +9,11 @@ src="/images/Home_files/u12.png" border="0" alt=""></span>
 </DIV>
 <DIV id=u12container style="position:absolute; left:0px; top:0px; width:981px; height:81px;; overflow:visible;">
 
-<DIV id=u25 style="position:absolute; left:915px; top:92px; width:52px; height:18px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
-<DIV id=u25_rtf><span style=" font-family:'Arial'; color:#000000; font-size:25px;"><b><%= button_to "Find", new_member_session_path, :method => :get %></b></span></DIV></DIV>
+<DIV id=u25 style="position:absolute; left:815px; top:112px; width:52px; height:18px; ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
+<DIV id=u25_rtf><span style=" font-family:'Arial'; color:#000000; font-size:25px;"><b><%= form_tag(:controller => "devise/home", :action => "search", :params => params) do %>
+     <%=text_field_tag :id%>
+  <%= submit_tag "search" %>
+<%end%></b></span></DIV></DIV>
 
 <DIV id=ou14 style="position:absolute; left:13px; top:11px; width:154px; height:60px;; overflow:visible">
 
@@ -81,7 +84,7 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/Home_file
 
 </DIV>
 
-<INPUT id=u30  type=text value="" style="position:absolute; left:738px; top:90px; width:152px; height:23px; ; background-color:#FFFFFF; text-align: left ; font-family:'Arial'; font-size: 13px; color:#000000; font-style:normal; font-weight:normal; text-decoration:none"   >
+
 
 <span style="position:absolute; left:0px; top:1004px; width:983px; height:5px; ;
 filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/Home_files/u31.png',sizingMethod='scale');

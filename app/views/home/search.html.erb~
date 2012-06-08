@@ -1,6 +1,6 @@
 <% if @organisation.present? %>
 
-     <table >
+     <table cellspacing="20">
        
         <tr>
             <%  @organisation.each do |f| %>
@@ -13,3 +13,5 @@
     <% else %>
         <h1> Search not found ! Please try again !!!</h1>
     <% end %>
+
+

@@ -1,3 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>CSS Menu Maker Installation Instructions</title>
+
+<style type="text/css">
+   body{padding:20px; font-size:15px; color:#000000; font-family:Arial, Helvetica, sans-serif;}
+   h2 {font-weight:bold; color:#000099; margin:10px 0px; }
+   p span {color:#006600; font-weight:bold; }
+   a, a:link, a:visited {color:#00000;}
+   textarea {width: 100%; padding: 10px; margin: 10px 0 15px 0; font-size: 20px; font-family: Consolas,monospace;}
+   textarea.html {height: 300px;}
+   p {margin: 0 0 10px 0;}
+   code, pre {font-family: Consolas,monospace; color: green;}
+   ol li {margin: 0 0 15px 0;}
+</style>
+
+</head>
+
+<body background="/images/c1.jpg">
+
+
+
+
 
 <DIV id=ou12 style="position:absolute; left:0px; top:0px; width:981px; height:81px;; overflow:visible">
 
@@ -46,7 +70,11 @@ src="/images/bdaygift.jpeg" border="0" alt=""></span>
 <DIV id=u21ann style="font-size:1px; position:absolute; left:240px; top:88px; width:1px; height:1px; overflow:visible"></DIV>
 
 <DIV id=u22 style="position:absolute; left:600px; top:95px; width:68px; height:16px; font-size:20px; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
-<DIV id=u22_rtf><span style=" color:#434343; font-size:20px;"><%= link_to "Login", new_member_session_path, :method => :get %></span></DIV></DIV>
+<DIV id=u22_rtf><span style=" color:#434343; font-size:20px;"><% if member_signed_in? %>
+<%= link_to "Logout", destroy_member_session_path %> <%else%>
+<%= link_to "Login", new_member_session_path, :method => :get %>
+<%end%>
+</span></DIV></DIV>
 <DIV id=u22ann style="font-size:1px; position:absolute; left:967px; top:4px; width:1px; height:1px; overflow:visible"></DIV>
 
 <DIV id=u23 style="position:absolute; left:500px; top:95px; width:68px; height:16px;font-size:18px ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
@@ -83,7 +111,8 @@ filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/Home_file
 
 
 
-
+</body>
+</html>
 
 
 

@@ -16,7 +16,7 @@
 
   <div class="field">
     <%= f.label :myevent_id %><br />
-    <%= f.text_field :myevent_id %>
+    <%= f.text_field :myevent_id, :size=>"20x5"%>
   </div>
 
   <div class="field">

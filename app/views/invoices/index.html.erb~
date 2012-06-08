@@ -37,4 +37,4 @@
 <% end %>
 </table>
 
-<%= link_to 'Back', root_path %>
+<%= link_to 'Back', home_admin_login_path %>

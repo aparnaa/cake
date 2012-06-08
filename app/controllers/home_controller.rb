@@ -34,4 +34,10 @@ end
   def search
    @organisation=Organisation.find_all_by_category(params[:id])
  end
+
+  def works
+  end
+
+  def term
+  end
 end

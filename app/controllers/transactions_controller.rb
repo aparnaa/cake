@@ -14,8 +14,8 @@ before_filter :authenticate_member!
 
   def create
    $value
-p "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj"
-   p params[:id]
+
+    params[:id]
     $value= params[:id]
    @transaction = Transaction.new(params[:transaction])
 		
