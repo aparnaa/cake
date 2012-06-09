@@ -1,5 +1,5 @@
 class TransactionsController < ApplicationController
-before_filter :authenticate_member!
+#before_filter :authenticate_member!
   def index
 	 @transaction=Transaction.all
 	 @id=current_member.id
