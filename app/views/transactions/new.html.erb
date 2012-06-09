@@ -29,7 +29,7 @@ Expiry Date*
 <%=f.date_select :card_date,:start_year => 1960,:end_year =>3000,:prompt => :'select',:order => [:day, :month, :year] %>
 <br />
  Card Verification*
-<%=f.text_field:card_verification%><br />
+<%=f.password_field:card_verification%><br />
 <br />
 
 <br />

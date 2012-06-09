@@ -1,5 +1,6 @@
 <%= render :partial => "layouts/aft_signedin" %>
 <%= render :partial => "layouts/last" %>
+<script src="/javascripts/livevalidation_standalone.js"></script>
 
 <div  style="position:absolute; left:150px; top:150px; width:px; height:px; ; ; text-align: center ; font-family:Arial; text-align:left; word-wrap:break-word;" >
 
@@ -36,10 +37,17 @@
     <%#= session[:value][:message] %>
 
  
-<%= f.select :email, options_for_select(Contact.all.collect {|p| [p.email]}, {:prompt => 'select email'}) %>
+<%= f.select :email, options_for_select(@contacts.collect {|p| [p.email]}, {:prompt => 'select email'}) %>
 
   </div>
   <div class="actions">
     <%= f.submit 'Send' %>
   </div>
 <% end %>
+
+<script>
+var f1 = new LiveValidation('_a_firstname');
+f1.add( Validate.Presence );
+var f2 = new LiveValidation('_a_lastname');
+f2.add( Validate.Presence );
+</script>

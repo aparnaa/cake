@@ -11,6 +11,12 @@ gem 'devise'
 gem 'activemerchant'
 gem 'heroku'
 gem 'pg'
+
+gem  'rspec'
+gem  'rspec-rails'
+gem 'rspec-core'
+gem  'shoulda' 
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

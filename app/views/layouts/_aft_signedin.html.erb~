@@ -71,7 +71,7 @@ src="Celebrant-after-login-page_files/u8.png" border="0" alt=""></span>
 <% end %> </b></span></DIV></DIV>
 
 <DIV id=u23 style="position:absolute; left:900px; top:95px; width:200px; height:16px;font-size:18px ; ; text-align: left ; font-family:Arial; text-align:left; word-wrap:break-word;" >
-<%= form_tag(:controller => "devise/home", :action => "search", :params => params) do %>
+<%= form_tag(:controller => "home", :action => "search", :params => params) do %>
     Search Organisations <%=text_field_tag :id%>
   <%= submit_tag "search" %>
 <%end%>

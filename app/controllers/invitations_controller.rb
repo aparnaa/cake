@@ -93,7 +93,7 @@ before_filter :authenticate_member!
 
 	@a=Myevent.new(params[:@myevent])
 	@a.save
-		
+	 @contacts = Contact.find_all_by_member_id(current_member.id)	
   end
 
   def myevent
