@@ -33,10 +33,7 @@
   <td><%=f.hidden_field :myevent_id, :value=> @a.id %></td>
   <div class="field">
     <%= f.label :email %><br />
-    <%#= f.text_field :email %>
-    <%#= session[:value][:message] %>
-
- 
+    
 <%= f.select :email, options_for_select(@contacts.collect {|p| [p.email]}, {:prompt => 'select email'}) %>
 
   </div>

@@ -26,6 +26,8 @@
 <script>
   var f1 = new LiveValidation('_myevent_share_amount');
 f1.add( Validate.Presence ); 
+f1.add( Validate.Numericality );
+f1.add( Validate.Length, { minimum: 1, maximum: 2 } );
 </script>
 
 <% end %>
