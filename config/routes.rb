@@ -16,6 +16,7 @@ Newapp::Application.routes.draw do
   get "home/orgshow"
   get "home/orgdetail"
   get "myevents/adminindex"
+  get "myevents/index"
 
   #get "myevents/new"
   #get "myevents/create"
