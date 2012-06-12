@@ -1,0 +1,22 @@
+require "spec_helper"
+describe InvoicesController do
+ describe "routing" do
+  it "routes to #index" do
+    get("/invoice/index").should route_to("invoice#index")
+
+  end
+   it "routes to #show" do
+    get("/invoice/show").should route_to("invoice#show")
+
+  end
+  it "routes to #contribution" do
+    get("/invoice/contribution").should route_to("invoice#contribution")
+
+  end
+   
+ end
+end
+
+
+
+
